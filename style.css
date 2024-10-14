@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.recipe-card {
+    background: url('image.png') no-repeat center center;
+    background-size: cover; /* Ensure the background image covers the card */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional overlay to darken background and make text more readable */
+.recipe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Darkens background for readability */
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.recipe-title {
+    text-align: center;
+    color: #fff; /* Change title color to white for contrast */
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.prep-info {
+    margin: 10px 0;
+    text-align: center;
+    color: #ddd; /* Lighter text color */
+}
+
+.toggle-button, .start-button, .next-button, .print-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover, .start-button:hover, .next-button:hover, .print-button:hover {
+    background-color: #45a049;
+}
+
+.ingredients, .steps {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: none; /* Hidden by default */
+}
+
+.ingredient, .step {
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.ingredient:hover, .step:hover {
+    background-color: #f0f0f0;
+}
+
+/* Highlight Style */
+.highlight {
+    background-color: #cce5ff; /* Light blue highlight */
+    border-radius: 5px; /* Optional: Rounded corners for the highlight */
+}
+
+.timer {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #fff; /* Timer color adjusted for visibility */
+}
+
+.progress-container {
+    width: 100%;
+    background: #ddd;
+    border-radius: 4px;
+    height: 20px;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #4CAF50;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .recipe-card {
+        padding: 10px;
+    }
+
+    .toggle-button, .start-button, .next-button, .print-button {
+        width: 100%;
+    }
+}
+
+/* Print-friendly layout */
+@media print {
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .toggle-button, .start-button, .next-button, .print-button {
+        display: none; /* Hide buttons when printing */
+    }
+
+    .recipe-card {
+        box-shadow: none; /* Remove shadow */
+        border: none; /* Remove border */
+    }
+
+    .timer {
+        display: none; /* Hide timer */
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Card - Gulab Jamun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="recipe-card">
+        <h1 class="recipe-title">Gulab Jamun</h1>
+        <img src="img1.png" alt="Gulab Jamun" class="recipe-image">
+        
+        <div class="prep-info">
+            <p><strong>Preparation Time🕒:</strong> 40-50 minutes</p>
+            <p><strong>Serving Size🥣:</strong> 12 pieces</p>
+        </div>
+
+        <button class="toggle-button" id="toggle-ingredients">Show Ingredients📖</button>
+        <div class="ingredients-container">
+            <h3 id="ingredients-heading" style="display: none;">Ingredients:</h3>
+            <ul class="ingredients" id="ingredients-list">
+                <li class="ingredient">1 cup Milk Powder</li>
+                <li class="ingredient">1/4 cup All-Purpose Flour</li>
+                <li class="ingredient">1/4 tsp Baking Soda</li>
+                <li class="ingredient">2 tbsp Ghee (Clarified Butter)</li>
+                <li class="ingredient">Warm Milk, as needed</li>
+                <li class="ingredient">Sugar Syrup (2 cups sugar + 2 cups water)</li>
+                <li class="ingredient">1 tsp Cardamom Powder</li>
+                <li class="ingredient">Oil for deep frying</li>
+            </ul>
+        </div>
+
+        <button class="toggle-button" id="toggle-steps">Show Steps📝</button>
+        <div class="steps-container">
+            <h3 id="steps-heading" style="display: none;">Steps:</h3>
+            <ol class="steps" id="steps-list">
+                <li class="step">Mix milk powder, flour, and baking soda. Add ghee and mix well.</li>
+                <li class="step">Gradually add warm milk to form a smooth dough.</li>
+                <li class="step">Shape dough into small balls.</li>
+                <li class="step">Deep fry the balls on low heat until golden brown.</li>
+                <li class="step">Prepare sugar syrup by boiling sugar and water. Add cardamom powder.</li>
+                <li class="step">Soak fried balls in warm sugar syrup for 30 minutes.</li>
+            </ol>
+        </div>
+
+        <button id="start-cooking" class="start-button">Start Cooking</button>
+        <button id="next-step" class="next-button" style="display: none;">Next</button>
+
+        <div class="timer" id="timer">Remaining Time🕒: <span id="time">60:00</span></div>
+
+        <button class="print-button" id="print-recipe">Print Recipe</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
